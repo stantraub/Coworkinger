@@ -15,8 +15,6 @@ class CreateSpaces < ActiveRecord::Migration[5.2]
         t.integer :cost, null: false
         t.string :open_hour, null: false
         t.string :closing_hour, null: false
-
-
       t.timestamps
     end
   end
