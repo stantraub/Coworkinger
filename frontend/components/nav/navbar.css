@@ -1,0 +1,53 @@
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Avenir;
+    padding: 0 20px;
+    /* position: fixed; */
+    /* z-index: 2; */
+    /* max-height: 10%; */
+}
+
+.main-logo {
+    width: 200px;
+    padding-top: 10px;
+    /* padding: 12px; */
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #4abde9;
+}
+
+.signup-button {
+    border-color: #4abde9;
+    color: #4abde9;
+    font-size: 16px;
+    font-family: "Avenir";
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+.signup-button:hover {
+    border-color: #009ACD;
+    color: #009ACD;
+}
+
+.signup-link {
+    text-decoration: none;
+    color: #4abde9;
+    font-family: Avenir;
+}
+
+.action-item {
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+.action-buttons-wrapper {
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+}

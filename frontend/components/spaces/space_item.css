@@ -1,0 +1,13 @@
+.space-index-main {
+    padding: 60px;
+}
+
+.space-item-wrapper {
+    border: 1px solid #e6e6e6;
+    width: 300px;
+    height: 180px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0.5em;
+    border-radius: 3px;
+}

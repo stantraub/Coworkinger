@@ -1,0 +1,8 @@
+.space-index-main {
+    font-family: Avenir;
+}
+
+.spaces-index-wrapper {
+    display: flex;
+    flex-direction: column;
+}   
