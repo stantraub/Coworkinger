@@ -32,6 +32,15 @@ class Api::SpacesController < ApplicationController
         end
     end 
 
+    def destroy 
+        @space = Space.find(params[:id])
+        if @space.destroy
+            render :show
+        else
+            render json: @post.errors.full_messages, status: 422
+        end
+    end 
+
     private
 
     def space_params
