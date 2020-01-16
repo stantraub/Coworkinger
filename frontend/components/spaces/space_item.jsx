@@ -1,5 +1,5 @@
 import React from 'react';
-import './space_item.css'
+
 class SpaceItem extends React.Component {
     render() {
         return (

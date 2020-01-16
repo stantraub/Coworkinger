@@ -1,5 +1,5 @@
 import React from 'react'
-import "./space_index.css"
+
 // import { withRouter } from 'react-router-dom';
 import SpaceItem from './space_item';
 
@@ -13,7 +13,7 @@ class Spaces extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchSpaces();
+        // this.props.fetchSpaces();
     }   
 
     componentWillReceiveProps(newState) {
