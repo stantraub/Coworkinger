@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import SpaceItem from './space_item';
 
-const Spaces = () => {
-    const [spaces, setSpaces] = useState([])
-}
+
+// const Spaces = () => {
+//     const [spaces, setSpaces] = useState([])
+// }
 
 class Spaces extends React.Component {
     constructor(props) {
@@ -42,7 +43,7 @@ class Spaces extends React.Component {
                             city={space.city}
                             state={space.state}
                             cost={space.cost}
-
+                            mainPic={space.main_pic}
                         />
                     ))}
                 </div>
