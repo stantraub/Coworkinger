@@ -28,7 +28,6 @@
     "npm": "6.9.0"
   },
   "scripts": {
-    "heroku-prebuild": "npm install --dev",
     "postinstall": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch --mode=development"
