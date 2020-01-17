@@ -3,15 +3,41 @@
 }
 
 .space-item-wrapper {
-    border: 1px solid #e6e6e6;
-    width: 300px;
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid #e6e6e6;
+    width: 45%;
     height: 180px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     margin: 0.5em;
     border-radius: 3px;
+    position: relative;
 }
 
 .main-pic {
-    
+    width: 300px;
+    height: 200px;
+    border-radius: 4px;
+}
+
+.space-item-info {
+    padding-left: 15px;
+}
+
+.space-item-name {
+    font-size: 18px;
+    padding-bottom: 10px
+}
+
+.space-item-amenities {
+    color: gray;
+    font-size: 14px;
+}
+
+.space-item-cost {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 18px;
 }

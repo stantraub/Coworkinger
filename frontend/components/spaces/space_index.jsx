@@ -37,13 +37,17 @@ class Spaces extends React.Component {
                 <div className="spaces-index-wrapper">
                     {this.state.spaces.map(space => (
                         <SpaceItem 
-                            key={space._id}
+                            key={space.id}
                             name={space.name}
                             address={space.address}
                             city={space.city}
                             state={space.state}
                             cost={space.cost}
                             mainPic={space.main_pic}
+                            parking={space.parking}
+                            wifi={space.wifi_included}
+                            openHour={space.open_hour}
+                            closingHour={space.closing_hour}
                         />
                     ))}
                 </div>
