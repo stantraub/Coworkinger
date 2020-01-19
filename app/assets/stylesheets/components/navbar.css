@@ -4,6 +4,8 @@
     justify-content: space-between;
     font-family: Avenir;
     padding: 0 20px;
+    /* position: fixed; */
+    /* border-bottom: 1px solid #e6e6e6; */
 }
 
 .main-logo {

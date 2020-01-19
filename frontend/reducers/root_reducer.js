@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
-import spaces from './space_reducer'
-import ui from './ui_reducer';
+
+import entitiesReducer from "./entities_reducer";
+import ui_reducer from './ui_reducer';
 
 const RootReducer = combineReducers({
-    ui,
-    spaces
+    ui: ui_reducer,
+    entities: entitiesReducer
 })
 
 export default RootReducer;

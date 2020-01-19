@@ -5,7 +5,7 @@ export const fetchSpaces = () => (
     })
 )
 
-export const fetchSpace = () => (
+export const fetchSpace = (id) => (
     $.ajax({
         method: 'get',
         url: `/api/spaces/${id}`

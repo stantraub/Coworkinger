@@ -38,6 +38,7 @@ class Spaces extends React.Component {
                     {this.state.spaces.map(space => (
                         <SpaceItem 
                             key={space.id}
+                            spaceId={space.id}
                             name={space.name}
                             address={space.address}
                             city={space.city}

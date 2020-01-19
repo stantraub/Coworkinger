@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SpaceItem extends React.Component {
     constructor(props) {
@@ -21,16 +22,20 @@ class SpaceItem extends React.Component {
     render() {
         return (
           <div className="space-item-wrapper">
-            <img className="main-pic" src={this.props.mainPic} />
-            <div className="space-item-info">
-              <div className="space-item-name">{this.props.name}</div>
-              <div className="space-item-amenities">
-                <div>{this.props.city}, {this.props.state}</div>
-                <div>{this.includedAmenities()}</div>
-                <div>Hours: {this.props.openHour} - {this.props.closingHour}</div>
+            <Link to={`/spaces/${this.props.spaceId}`} className="space-link">
+              <img className="main-pic" src={this.props.mainPic} />
+            </Link>
+            <Link to={`/spaces/${this.props.spaceId}`} className="space-link">
+              <div className="space-item-info">
+                <div className="space-item-name">{this.props.name}</div>
+                <div className="space-item-amenities">
+                  <div>{this.props.city}, {this.props.state}</div>
+                  <div>{this.includedAmenities()}</div>
+                  <div>Hours: {this.props.openHour} - {this.props.closingHour}</div>
+                </div>
+                <div className="space-item-cost"><strong>${this.props.cost}</strong> / month</div>
               </div>
-              <div className="space-item-cost"><strong>${this.props.cost}</strong> / month</div>
-            </div>
+            </Link>
           </div>
         );
     }
