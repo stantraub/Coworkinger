@@ -5,5 +5,4 @@ class Space < ApplicationRecord
     has_one_attached :main_pic
     has_many_attached :space_pics
 
-
 end
