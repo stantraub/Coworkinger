@@ -1,59 +1,48 @@
 import React from 'react'
 import SpaceItem from './space_item';
 
-
-// const Spaces = () => {
-//     const [spaces, setSpaces] = useState([])
-// }
-
 class Spaces extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            spaces: []
-        }
     }
 
     componentDidMount() {
         this.props.fetchSpaces();
     }   
 
-    componentWillReceiveProps(newState) {
-        this.setState({ spaces: newState.spaces})
-    }
-
     render() {
-        if (this.state.spaces.length === 0) {
+        if (this.props.spaces.length === 0) {
             return (
                 <div>
                     There are no spaces in this location
                 </div>
             )
-        }
-        return (
-            <div className="space-index-main">
-                <h1>All Coworking Spaces in San Francisco</h1>
-                <div className="spaces-index-wrapper">
-                    {this.state.spaces.map(space => (
-                        <SpaceItem 
-                            key={space.id}
-                            spaceId={space.id}
-                            name={space.name}
-                            address={space.address}
-                            city={space.city}
-                            state={space.state}
-                            cost={space.cost}
-                            mainPic={space.main_pic}
-                            parking={space.parking}
-                            wifi={space.wifi_included}
-                            openHour={space.open_hour}
-                            closingHour={space.closing_hour}
-                        />
-                    ))}
+        } else {
+            return (
+                <div className="space-index-main">
+                    <h1>All Coworking Spaces in San Francisco</h1>
+                    <div className="spaces-index-wrapper">
+                        {this.props.spaces.map(space => (
+                            <SpaceItem 
+                                key={space.id}
+                                spaceId={space.id}
+                                name={space.name}
+                                address={space.address}
+                                city={space.city}
+                                state={space.state}
+                                cost={space.cost}
+                                mainPic={space.main_pic}
+                                parking={space.parking}
+                                wifi={space.wifi_included}
+                                openHour={space.open_hour}
+                                closingHour={space.closing_hour}
+                            />
+                        ))}
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        }
     }
 }
 

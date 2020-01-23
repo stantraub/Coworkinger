@@ -18,6 +18,19 @@ ActiveRecord::Base.transaction do
     bespoke_main_pic = open("https://coworking-dev.s3-us-west-1.amazonaws.com/Bespoke_main_pic.jpg")
     bespoke.main_pic.attach(io: bespoke_main_pic, filename: 'Bespoke_main_pic.jpg')
 
+    bespoke_pic_1 = open("https://coworking-dev.s3-us-west-1.amazonaws.com/bespoke_pic_1.png")
+    bespoke.space_pics.attach(io: bespoke_pic_1, filename: 'bespoke_pic_1.png')
+
+    bespoke_pic_2 = open("https://coworking-dev.s3-us-west-1.amazonaws.com/bespoke_pic_2.jpg")
+    bespoke.space_pics.attach(io: bespoke_pic_2, filename: 'bespoke_pic_2.jpg')
+
+    bespoke_pic_3 = open("https://coworking-dev.s3-us-west-1.amazonaws.com/bespoke_pic_3.jpg")
+    bespoke.space_pics.attach(io: bespoke_pic_3, filename: 'bespoke_pic_3.jpg')
+
+    bespoke_pic_4 = open("https://coworking-dev.s3-us-west-1.amazonaws.com/bespoke_pic_4.jpg")
+    bespoke.space_pics.attach(io: bespoke_pic_4, filename: 'bespoke_pic_4.jpg')
+    
+
     assembly = Space.create!({name: "The Assembly", address: "449 14th St., Mission District", city: "San Francisco", state: "CA", zipcode: 94103, phone: "‭(415) 868-3322‬", description: "The Assembly is a wellbeing club that makes people feel good with exceptional workouts, wellness, food, community, and connection.", email: "aloha@theassembly.com", parking: "Yes", wifi_included: true, website: "https://www.theassembly.com/", cost: 250, open_hour: "8am", closing_hour: "8pm"})
     assembly_main_pic = open("https://coworking-dev.s3-us-west-1.amazonaws.com/assembly_main_pic.jpg")
     assembly.main_pic.attach(io: assembly_main_pic, filename: 'assembly_main_pic.jpg')
