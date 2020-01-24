@@ -135,7 +135,12 @@ html {
  */
 
 a:focus {
-    outline: thin dotted;
+    outline: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #4abde9;;
 }
 
 /**

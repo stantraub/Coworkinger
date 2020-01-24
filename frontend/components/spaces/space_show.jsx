@@ -1,14 +1,23 @@
 import React from 'react';
-
 class SpaceShow extends React.Component {
     constructor(props) {
         super(props)
-
+      
     }
 
     componentDidMount() {
         this.props.fetchSpace(this.props.match.params.id)
-    
+    }
+
+    includedAmenities() {
+      if (this.props.space.amenities) {
+        Object.entries(this.props.space.amenties).map(amenity => {
+          if (amenity[1] === true || amenity[1] === 'Yes') {
+            return <span>{amenity[0]}</span>
+          }
+        })
+      } 
+      
     }
 
     render() {
@@ -51,10 +60,13 @@ class SpaceShow extends React.Component {
                       <span className="space-show-name">{space.name}</span>
                       <div className="space-show-city">{space.city}</div>
                     </div>
-                    <div>
+                    <div className="description-wrapper">
                       <p className="space-show-description">
                         {space.description}
                       </p>
+                    </div>
+                    <div className="amenties-wrapper">
+                      
                     </div>
                   </div>
                   <div className="reserve-widget-wrapper">
@@ -64,6 +76,11 @@ class SpaceShow extends React.Component {
                         <span className="reserve-per-month">per month</span>
                       </div>
                       <button className="reserve-tour-btn">Book a tour</button>
+                    </div>
+                    <div className="contact-info-wrapper">
+                      <div className="contact-item-top"><a href={space.website}>{space.website}</a></div>
+                      <div className="contact-item">{space.email}</div>
+                      <div className="contact-item">{space.phone}</div>
                     </div>
                   </div>
                 </div>

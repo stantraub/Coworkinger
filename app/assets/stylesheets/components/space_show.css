@@ -47,7 +47,7 @@
 }
 
 .space-show-info {
-    max-width: 1080px;
+    max-width: 30%;
     margin-left: auto;
     margin-right: auto;
     width: auto;
@@ -62,11 +62,24 @@
 
 .space-show-city {
     padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.description-wrapper {
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+
+
+
 }
 
 .space-show-description {
     padding-top: 16px;
     padding-bottom: 16px;
+}
+
+.amenities-wrapper {
+
 }
 
 .space-summary {
@@ -96,6 +109,7 @@
 .reserve-cost {
     font-size: 22px;
     font-weight: 700;
+    max-width: 30%;
 }
 
 .reserve-per-month {
@@ -112,4 +126,24 @@
     border-radius: 4px;
     font-weight: 500;
     padding: 10px 22px;
+}
+
+.contact-info-wrapper {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    padding-top: 12px;
+    border: 1px solid #e6e6e6;
+
+}
+
+.contact-item-top {
+    padding-bottom: 12px;
+}
+.contact-item {
+    border-top: 1px solid #e6e6e6;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
