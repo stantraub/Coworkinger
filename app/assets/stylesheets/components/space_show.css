@@ -1,5 +1,6 @@
 .space-show-main-div {
     font-family: Avenir;
+    color: rgb(72, 72, 72);
     font-size: 16px;
     width: 100%;
 }
@@ -40,9 +41,12 @@
     height: 100%;
 }
 
-.space-show-info {
+.space-info-wrapper {
     display: flex;
-    flex-direction: column;
+    
+}
+
+.space-show-info {
     max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
@@ -56,6 +60,56 @@
     font-weight: 700;
 }
 
+.space-show-city {
+    padding-top: 10px;
+}
+
+.space-show-description {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
 .space-summary {
     margin-top: 24px;
+}
+
+.reserve-widget-wrapper {
+    margin-right: auto;
+    width: 376px;
+    padding-right: 24px;
+}
+
+.reserve-widget {
+    margin-top: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    border: 1px solid #e6e6e6
+}
+
+.reserve-cost-wrapper {
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 12px;
+}
+
+.reserve-cost {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.reserve-per-month {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.reserve-tour-btn {
+    margin-top: 20px;
+    width: 100%;
+    color: white;
+    background-color: #4abde9;
+    font-family: inherit;
+    border-radius: 4px;
+    font-weight: 500;
+    padding: 10px 22px;
 }

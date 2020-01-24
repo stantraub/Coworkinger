@@ -21,7 +21,7 @@ class Spaces extends React.Component {
         } else {
             return (
                 <div className="space-index-main">
-                    <h1>All Coworking Spaces in San Francisco</h1>
+                    <h1 className="space-index-header">All Coworking Spaces in San Francisco</h1>
                     <div className="spaces-index-wrapper">
                         {this.props.spaces.map(space => (
                             <SpaceItem 
