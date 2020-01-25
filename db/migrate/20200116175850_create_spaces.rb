@@ -8,7 +8,7 @@ class CreateSpaces < ActiveRecord::Migration[5.2]
         t.integer :zipcode, null: false
         t.text :description, null: false
         t.string :email, null: false
-        t.string :parking, null: false
+        t.boolean :parking, null: false
         t.boolean :wifi_included, null: false
         t.string :phone, null: false
         t.string :website

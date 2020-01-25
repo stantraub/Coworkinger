@@ -1,8 +1,8 @@
 import React from 'react';
+
 class SpaceShow extends React.Component {
     constructor(props) {
         super(props)
-      
     }
 
     componentDidMount() {
@@ -10,20 +10,14 @@ class SpaceShow extends React.Component {
     }
 
     includedAmenities() {
-      if (this.props.space.amenities) {
-        Object.entries(this.props.space.amenties).map(amenity => {
-          if (amenity[1] === true || amenity[1] === 'Yes') {
-            return <span>{amenity[0]}</span>
-          }
-        })
+      return Object.keys(this.props.space.amenities)
       } 
       
-    }
 
     render() {
         // if space is undefined, set space equal to an empty object
         const {space = {}} = this.props
-        if (space.space_pics) {
+        if (space.space_pics && space.amenities) {
             return (
               <div className="space-show-main-div">
                 <div className="space-pics">
@@ -66,7 +60,7 @@ class SpaceShow extends React.Component {
                       </p>
                     </div>
                     <div className="amenties-wrapper">
-                      
+                      {this.includedAmenities()}
                     </div>
                   </div>
                   <div className="reserve-widget-wrapper">

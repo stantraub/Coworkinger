@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_17_033726) do
+ActiveRecord::Schema.define(version: 2020_01_25_024159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2020_01_17_033726) do
     t.integer "zipcode", null: false
     t.text "description", null: false
     t.string "email", null: false
-    t.string "parking", null: false
     t.boolean "wifi_included", null: false
     t.string "phone", null: false
     t.string "website"
@@ -53,6 +52,7 @@ ActiveRecord::Schema.define(version: 2020_01_17_033726) do
     t.string "closing_hour", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "parking"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

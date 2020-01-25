@@ -9,11 +9,11 @@ class SpaceItem extends React.Component {
     includedAmenities() {
       let included = ""
 
-      if (this.props.parking === 'Yes') {
+      if (this.props.parking) {
         included += 'Nearby Parking · '
       }
 
-      if (this.props.wifi === true) {
+      if (this.props.wifi) {
         included += 'Wifi'
       }
       

@@ -10,8 +10,8 @@
 .space-pics {
     overflow: hidden;
     width: 100%;
-    margin-top: 20px;
-    height: 592px;
+    margin-top: 10px;
+    height: 475px;
     display: flex;
     flex-direction: row;
 
