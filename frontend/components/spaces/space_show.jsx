@@ -10,14 +10,22 @@ class SpaceShow extends React.Component {
     }
 
     includedAmenities() {
-      return Object.keys(this.props.space.amenities)
-      } 
-      
+      if (this.props.space.amenities) {
+        let amenities = Object.keys(this.props.space.amenities).map((amenity, i) => {
+          return <li key={i}>{(amenity[0].toUpperCase() + amenity.slice(1)).split("_").join(" ")}</li>
+        })
 
+        return amenities
+      } else {
+        return <div></div>
+      }
+      
+    } 
+    
     render() {
         // if space is undefined, set space equal to an empty object
         const {space = {}} = this.props
-        if (space.space_pics && space.amenities) {
+        if (space.space_pics) {
             return (
               <div className="space-show-main-div">
                 <div className="space-pics">
@@ -59,17 +67,17 @@ class SpaceShow extends React.Component {
                         {space.description}
                       </p>
                     </div>
-                    <div className="amenties-wrapper">
-                      {this.includedAmenities()}
+                    <div className="amenities-wrapper">
+                      <h2>Amenities</h2>
+                      <ul className="amenities-list">
+                        {this.includedAmenities()}
+                      </ul>  
                     </div>
                   </div>
                   <div className="reserve-widget-wrapper">
                     <div className="reserve-widget">
-                      <div className="reserve-cost-wrapper">
-                        <span className="reserve-cost">${space.cost} </span>
-                        <span className="reserve-per-month">per month</span>
-                      </div>
-                      <button className="reserve-tour-btn">Book a tour</button>
+                      <span className="reserve-cost">${space.cost} </span>
+                      <span className="reserve-per-month">per desk / month</span>
                     </div>
                     <div className="contact-info-wrapper">
                       <div className="contact-item-top"><a href={space.website}>{space.website}</a></div>

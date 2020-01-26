@@ -27,6 +27,11 @@ class Spaces extends React.Component {
                             <SpaceItem 
                                 key={space.id}
                                 spaceId={space.id}
+                                neighborhood={space.neighborhood}
+                                peopleCapacity={space.people_capacity}
+                                officeCapacity={space.office_capacity}
+                                availability={space.availability}
+                                deskDay={space.desk_day}
                                 name={space.name}
                                 address={space.address}
                                 city={space.city}
@@ -34,9 +39,10 @@ class Spaces extends React.Component {
                                 cost={space.cost}
                                 mainPic={space.main_pic}
                                 parking={space.parking}
-                                wifi={space.wifi_included}
                                 openHour={space.open_hour}
                                 closingHour={space.closing_hour}
+                                email={space.email}
+                                phone={space.phone}
                             />
                         ))}
                     </div>

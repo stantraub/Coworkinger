@@ -9,15 +9,33 @@ class SpaceItem extends React.Component {
     includedAmenities() {
       let included = ""
 
+      if (this.props.availability) {
+        included += "Space available · "
+      }
+
       if (this.props.parking) {
         included += 'Nearby Parking · '
       }
 
-      if (this.props.wifi) {
-        included += 'Wifi'
+      if (this.props.deskDay) {
+        included += 'Day Pass Option · '
       }
-      
+
+      included += `${this.props.peopleCapacity} total capacity`
+
+      if (this.props.officeCapacity > 0) {
+        included += ` · ${this.props.officeCapacity} offices`
+      }
       return included;
+    }
+
+    phone() {
+      if (this.props.phone !== 'N/A') return this.props.phone
+    }
+
+    email() {
+      if (this.props.email !== 'N/A') return this.props.email
+
     }
     render() {
         return (
@@ -30,10 +48,14 @@ class SpaceItem extends React.Component {
                 <div className="space-item-name">{this.props.name}</div>
                 <div className="space-item-amenities">
                   <div>{this.props.city}, {this.props.state}</div>
-                  <div>{this.includedAmenities()}</div>
-                  <div>Hours: {this.props.openHour} - {this.props.closingHour}</div>
+                  <span>{this.props.neighborhood}</span>
+                  <div className="space-amenity-wrapper">{this.includedAmenities()}</div>
+                  <div className="space-item-contact">
+                    <div>{this.phone()}</div>
+                    <div>{this.email()}</div>
+                  </div>
                 </div>
-                <div className="space-item-cost"><strong>${this.props.cost}</strong> / month</div>
+                <div className="space-item-cost"><strong>${this.props.cost}</strong> per desk / month</div>
               </div>
             </Link>
           </div>

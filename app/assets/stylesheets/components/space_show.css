@@ -79,7 +79,15 @@
 }
 
 .amenities-wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 15px;
 
+}
+
+.amenities-list {
+    padding-top: 20px;
 }
 
 .space-summary {
@@ -99,11 +107,6 @@
     padding-bottom: 12px;
     padding-top: 12px;
     border: 1px solid #e6e6e6
-}
-
-.reserve-cost-wrapper {
-    border-bottom: 1px solid #e6e6e6;
-    padding-bottom: 12px;
 }
 
 .reserve-cost {
