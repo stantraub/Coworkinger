@@ -112,8 +112,14 @@
 
 .reserve-widget-wrapper {
     margin-right: auto;
-    width: 376px;
+    min-width: 376px;
     padding-right: 24px;
+}
+
+@media only screen and (max-width: 500px) {
+    .reserve-widget-wrapper {
+        display: none !important;
+    }
 }
 
 .reserve-widget {
