@@ -11,16 +11,27 @@ class SpaceShow extends React.Component {
 
     includedAmenities() {
       if (this.props.space.amenities) {
-        let amenities = Object.keys(this.props.space.amenities).map((amenity, i) => {
-          return <li key={i}>{(amenity[0].toUpperCase() + amenity.slice(1)).split("_").join(" ")}</li>
+
+        let amenities = Object.keys(this.props.space.amenities).slice(0, 6)
+        
+        return amenities.map((amenity, i) => {
+          return <div className="amenities-item" key={i}>{(amenity[0].toUpperCase() + amenity.slice(1)).split("_").join(" ")}</div>
         })
 
-        return amenities
       } else {
         return <div></div>
       }
       
     } 
+
+    otherAmenities() {
+      let numAmenities = Object.keys(this.props.space.amenities).length
+      if (numAmenities > 6) {
+        return <div className="num-amenities-wrapper">
+                  <div className="num-amenities-text">Show all {numAmenities} amenities</div>
+               </div>
+      }
+    }
     
     render() {
         // if space is undefined, set space equal to an empty object
@@ -69,9 +80,10 @@ class SpaceShow extends React.Component {
                     </div>
                     <div className="amenities-wrapper">
                       <h2>Amenities</h2>
-                      <ul className="amenities-list">
+                      <div className="amenities-div">
                         {this.includedAmenities()}
-                      </ul>  
+                      </div>  
+                      {this.otherAmenities()}
                     </div>
                   </div>
                   <div className="reserve-widget-wrapper">

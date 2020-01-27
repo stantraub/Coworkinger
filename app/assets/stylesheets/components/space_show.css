@@ -79,15 +79,31 @@
 }
 
 .amenities-wrapper {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 24px;
+    padding-bottom: 24px;
     border-bottom: 1px solid #e6e6e6;
     margin-bottom: 15px;
-
 }
 
-.amenities-list {
+.amenities-div {
+    columns: 2 auto;
+}
+
+.amenities-item {
     padding-top: 20px;
+}
+
+.num-amenities-wrapper {
+    padding-top: 20px;
+}
+
+.num-amenities-wrapper:hover {
+    cursor: pointer;
+}
+
+.num-amenities-text {
+    margin: 0;
+    color: #4abde9
 }
 
 .space-summary {

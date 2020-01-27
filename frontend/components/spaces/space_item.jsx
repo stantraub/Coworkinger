@@ -13,12 +13,8 @@ class SpaceItem extends React.Component {
         included += "Space available · "
       }
 
-      if (this.props.parking) {
-        included += 'Nearby Parking · '
-      }
-
       if (this.props.deskDay) {
-        included += 'Day Pass Option · '
+        included += 'Day Passes Available · '
       }
 
       included += `${this.props.peopleCapacity} total capacity`

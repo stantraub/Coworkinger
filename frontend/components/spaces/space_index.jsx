@@ -38,7 +38,6 @@ class Spaces extends React.Component {
                                 state={space.state}
                                 cost={space.cost}
                                 mainPic={space.main_pic}
-                                parking={space.parking}
                                 openHour={space.open_hour}
                                 closingHour={space.closing_hour}
                                 email={space.email}

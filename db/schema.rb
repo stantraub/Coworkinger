@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_25_235948) do
+ActiveRecord::Schema.define(version: 2020_01_27_013334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,12 +51,17 @@ ActiveRecord::Schema.define(version: 2020_01_25_235948) do
     t.string "closing_hour", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "parking"
     t.string "neighborhood"
     t.integer "office_capacity"
     t.integer "people_capacity"
     t.boolean "availability"
     t.boolean "desk_day"
+    t.integer "shared_desk"
+    t.integer "meeting_rooms"
+    t.boolean "hours_24_access"
+    t.integer "transit_station_miles"
+    t.boolean "wellness_room"
+    t.integer "phone_booths"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

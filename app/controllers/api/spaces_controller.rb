@@ -44,6 +44,6 @@ class Api::SpacesController < ApplicationController
     private
 
     def space_params
-        params.require(:space).permit(:photos, :address, :city, :state, :zipcode, :phone, :name, :description, :email, :parking, :wifi_included, :website, :cost, :open_hour, :closing_hour )
+        params.require(:space).permit(:photos, :address, :city, :state, :zipcode, :phone, :name, :description, :email, :website, :cost, :open_hour, :closing_hour )
     end
 end

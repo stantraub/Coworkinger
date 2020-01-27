@@ -14,7 +14,6 @@
         json.phone space.phone
         json.description space.description
         json.email space.email
-        json.parking space.parking
         json.website space.website
         json.cost space.cost
         json.open_hour space.open_hour
