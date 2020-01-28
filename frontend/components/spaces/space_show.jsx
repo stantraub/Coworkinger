@@ -9,13 +9,27 @@ class SpaceShow extends React.Component {
         this.props.fetchSpace(this.props.match.params.id)
     }
 
-    includedAmenities() {
-      if (this.props.space.amenities) {
+    includedAmenities(spaceAmenities) {
+      if (spaceAmenities) {
 
-        let amenities = Object.keys(this.props.space.amenities).slice(0, 6)
+        let amenities = Object.entries(spaceAmenities).slice(0, 6)
         
         return amenities.map((amenity, i) => {
-          return <div className="amenities-item" key={i}>{(amenity[0].toUpperCase() + amenity.slice(1)).split("_").join(" ")}</div>
+          if (amenity[0] === 'hours_24_access') {
+            return <div className="amenities-item" key={i}>24/7 Access</div>
+          } else if (amenity[0] === "phone_booths") {
+            return <div className="amenities-item" key={i}>{amenity[1]} phone booths</div>
+          } else if (amenity[0] === 'transit_station_miles') {
+              if (amenity[1] < 1) {
+                return <div className="amenities-item" key={i}> &lt;1 mile to transit station </div>
+              } else {
+                return <div className="amenities-item" key={i}> {amenity[1]} miles to transit station </div>
+              }
+          } else if (amenity[0] === 'meeting_rooms') {
+            return <div className="amenities-item" key={i}> {amenity[1]} meeting rooms </div>
+          } else {
+            return <div className="amenities-item" key={i}>{(amenity[0][0].toUpperCase() + amenity[0].slice(1)).split("_").join(" ")}</div>
+          }
         })
 
       } else {
@@ -24,11 +38,11 @@ class SpaceShow extends React.Component {
       
     } 
 
-    otherAmenities() {
-      let numAmenities = Object.keys(this.props.space.amenities).length
+    otherAmenities(spaceAmenities) {
+      let numAmenities = Object.keys(spaceAmenities).length
       if (numAmenities > 6) {
         return <div className="num-amenities-wrapper">
-                  <div className="num-amenities-text">Show all {numAmenities} amenities</div>
+                  <div className="num-amenities-text" onClick={() => this.props.openModal('amenities')}>Show all {numAmenities} amenities</div>
                </div>
       }
     }
@@ -81,9 +95,9 @@ class SpaceShow extends React.Component {
                     <div className="amenities-wrapper">
                       <h2>Amenities</h2>
                       <div className="amenities-div">
-                        {this.includedAmenities()}
+                        {this.includedAmenities(space.amenities)}
                       </div>  
-                      {this.otherAmenities()}
+                      {this.otherAmenities(space.amenities)}
                     </div>
                   </div>
                   <div className="reserve-widget-wrapper">

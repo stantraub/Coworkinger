@@ -10,7 +10,7 @@ require 'open-uri'
 ActiveRecord::Base.transaction do
     Space.destroy_all
 
-    bespoke = Space.create!({name: "Bespoke", shared_desk: 416, phone_booths: 20, meeting_rooms: 20, hours_24_access: true, transit_station_miles: 0.1, wellness_room: true, people_capacity: 1180, office_capacity: 14, availability: true, desk_day: true, address: "845 Market St Suite 45", city: "San Francisco", state: "CA", zipcode: 94103, neighborhood: "SOMA", phone: "(415) 964-4815", description: "Bespoke is a collection of tech-forward spaces, tailored for in-person inspiration.", email: "contact@bespokesf.co", website: "https://bespokesf.co/", cost: 416, open_hour: "9am", closing_hour: "6pm"})
+    bespoke = Space.create!({name: "Bespoke", parking: 0, nap_room: true, event_space: true, bike_parking: true, printers_included: true, pet_friendly: true, snacks_drinks_included: false, tea_coffee_included: true, bocce_ball: true, ping_pong: false, billiards: false, foosball: false, showers: true, onsite_gym: false, shared_desk: 416, phone_booths: 20, meeting_rooms: 20, hours_24_access: true, transit_station_miles: 0.1, wellness_room: true, people_capacity: 1180, office_capacity: 14, availability: true, desk_day: true, address: "845 Market St Suite 45", city: "San Francisco", state: "CA", zipcode: 94103, neighborhood: "SOMA", phone: "(415) 964-4815", description: "Bespoke is a collection of tech-forward spaces, tailored for in-person inspiration.", email: "contact@bespokesf.co", website: "https://bespokesf.co/", cost: 416, open_hour: "9am", closing_hour: "6pm"})
     bespoke_main_pic = open("https://coworking-dev.s3-us-west-1.amazonaws.com/Bespoke_main_pic.jpg")
     bespoke.main_pic.attach(io: bespoke_main_pic, filename: 'Bespoke_main_pic.jpg')
 
