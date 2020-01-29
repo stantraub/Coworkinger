@@ -16,7 +16,6 @@ json.amenities do
     json.bike_parking @space.bike_parking if @space.bike_parking
     json.event_space @space.event_space if @space.event_space
     json.printers @space.printers_included if @space.printers_included
-    json.neighborhood @space.neighborhood if @space.neighborhood
     json.people_capacity @space.people_capacity if @space.people_capacity > 0
     json.office_capacity @space.office_capacity if @space.office_capacity > 0
     json.availability @space.availability if @space.availability
@@ -50,16 +49,13 @@ json.amenityCategories do
         json.nearest_parking @space.parking if @space.parking
     end
 
-    json.recreational_games do 
-        json.ping_pong @space.ping_pong if @space.ping_pong
-        json.bocce_ball @space.bocce_ball if @space.bocce_ball
-        json.billiards @space.billiards if @space.billiards
-        json.foosball @space.foosball if @space.foosball
+    json.facilities do 
+        json.phone_booths @space.phone_booths if @space.phone_booths > 0
+        json.meeting_rooms @space.meeting_rooms if @space.meeting_rooms > 0
     end
 
-    json.food_and_drinks do
-        json.snacks_drinks_included @space.snacks_drinks_included if @space.snacks_drinks_included
-        json.tea_coffee_included @space.tea_coffee_included if @space.tea_coffee_included
+    json.equipment do 
+        json.printers_and_scanners_included @space.printers_included if @space.printers_included
     end
 
     json.accessibility do 
@@ -74,10 +70,19 @@ json.amenityCategories do
         json.onsite_gym @space.onsite_gym if @space.onsite_gym
     end
 
-    json.facilities do 
-        json.phone_booths @space.phone_booths if @space.phone_booths > 0
-    json.meeting_rooms @space.meeting_rooms if @space.meeting_rooms > 0
+    json.recreational_games do 
+        json.ping_pong @space.ping_pong if @space.ping_pong
+        json.bocce_ball @space.bocce_ball if @space.bocce_ball
+        json.billiards @space.billiards if @space.billiards
+        json.foosball @space.foosball if @space.foosball
     end
+
+    json.food_and_drinks do
+        json.snacks_drinks_included @space.snacks_drinks_included if @space.snacks_drinks_included
+        json.tea_and_coffee_included @space.tea_coffee_included if @space.tea_coffee_included
+    end
+
+
 end
 
 json.main_pic url_for(@space.main_pic)

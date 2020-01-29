@@ -20,13 +20,21 @@ class SpaceShow extends React.Component {
           } else if (amenity[0] === "phone_booths") {
             return <div className="amenities-item" key={i}>{amenity[1]} phone booths</div>
           } else if (amenity[0] === 'transit_station_miles') {
-              if (amenity[1] < 1) {
-                return <div className="amenities-item" key={i}> &lt;1 mile to transit station </div>
+              if (amenity[1] < 1) { 
+                return <div className="amenities-item" key={i}> &lt;1 mile to nearest transit station </div>
               } else {
-                return <div className="amenities-item" key={i}> {amenity[1]} miles to transit station </div>
+                return <div className="amenities-item" key={i}> {amenity[1]} miles to nearest transit station </div>
+              }
+          } else if (amenity[0] === 'nearest_parking') {
+              if (amenity[1] < 1) {
+                return <div className="amenities-item" key={i}>&lt;1 mile to nearest parking lot</div>
+              } else {
+                return <div className="amenities-item" key={i}>{amenity[1]} miles to nearest parking lot </div>
               }
           } else if (amenity[0] === 'meeting_rooms') {
             return <div className="amenities-item" key={i}> {amenity[1]} meeting rooms </div>
+          } else if (amenity[0] === 'people_capacity') {
+            return <div className="amenities-item" key={i}> {amenity[1]} total capacity </div>
           } else {
             return <div className="amenities-item" key={i}>{(amenity[0][0].toUpperCase() + amenity[0].slice(1)).split("_").join(" ")}</div>
           }

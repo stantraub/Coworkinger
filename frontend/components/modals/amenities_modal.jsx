@@ -15,10 +15,16 @@ class Amenities extends React.Component {
                     return <div className="amenity-modal-item" key={i}>{amenity[1]} phone booths</div>
                 } else if (amenity[0] === 'transit_station_miles') {
                     if (amenity[1] < 1) {
-                        return <div className="amenity-modal-item" key={i}>&lt;1 mile to transit station </div>
+                        return <div className="amenity-modal-item" key={i}>&lt;1 mile to nearest transit station </div>
                     } else {
                         return <div className="amenity-modal-item" key={i}>{amenity[1]} miles to nearest transit station </div>
                     }
+                } else if (amenity[0] === 'nearest_parking') {
+                        if (amenity[1] < 1) {
+                            return <div className="amenity-modal-item" key={i}>&lt;1 mile to nearest parking lot</div>
+                        } else {
+                            return <div className="amenity-modal-item" key={i}>{amenity[1]} miles to nearest parking lot </div>
+                        }
                 } else if (amenity[0] === 'meeting_rooms') {
                     return <div className="amenity-modal-item" key={i}>{amenity[1]} meeting rooms </div>
                 } else if (amenity[0] === 'availability') {
