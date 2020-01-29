@@ -9,11 +9,30 @@ class Amenities extends React.Component {
         if (categoryAmenities) {
             let amenities = Object.entries(categoryAmenities)
             return amenities.map((amenity, i) => {
-                if (i === 0) {
-                 return <div className="amenity-modal-item-first" key={i}>{(amenity[0][0].toUpperCase() + amenity[0].slice(1)).split("_").join(" ")}</div>
-                } else {
+                if (amenity[0] === 'hours_24_access') {
+                    return <div className="amenity-modal-item" key={i}>24/7 Access</div>
+                } else if (amenity[0] === "phone_booths") {
+                    return <div className="amenity-modal-item" key={i}>{amenity[1]} phone booths</div>
+                } else if (amenity[0] === 'transit_station_miles') {
+                    if (amenity[1] < 1) {
+                        return <div className="amenity-modal-item" key={i}>&lt;1 mile to transit station </div>
+                    } else {
+                        return <div className="amenity-modal-item" key={i}>{amenity[1]} miles to nearest transit station </div>
+                    }
+                } else if (amenity[0] === 'meeting_rooms') {
+                    return <div className="amenity-modal-item" key={i}>{amenity[1]} meeting rooms </div>
+                } else if (amenity[0] === 'availability') {
+                    return <div className="amenity-modal-item" key={i}>Space available</div>
+                } else if (amenity[0] === 'office_capacity') {
+                    return <div className="amenity-modal-item" key={i}> {amenity[1]} offices </div>
+                } else if (amenity[0] === 'people_capacity') {
+                    return <div className="amenity-modal-item" key={i}> {amenity[1]} total capacity </div>
+                }
+                
+                else {
                     return <div className="amenity-modal-item" key={i}>{(amenity[0][0].toUpperCase() + amenity[0].slice(1)).split("_").join(" ")}</div>
                 }
+
             })
         } 
     }
@@ -22,7 +41,6 @@ class Amenities extends React.Component {
     render() {
         const { amenityCategories = {} } = this.props
 
-        
         return(
             <div className="amenities-modal-wrapper">
                 <div className="x-button" onClick={() => this.props.closeModal()}>

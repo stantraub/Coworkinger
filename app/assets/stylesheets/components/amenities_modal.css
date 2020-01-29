@@ -68,15 +68,15 @@
 
 }
 
-.amenity-modal-item-first {
-  padding-top: 24px;
-  padding-bottom: 24px;
-}
-
 
 
 .amenity-modal-item {
   border-top: 0.5px solid #e6e6e6;  
   padding-top: 24px;
   padding-bottom: 24px;
+}
+
+.amenity-modal-item:first-child {
+  border-top: none;
+
 }
