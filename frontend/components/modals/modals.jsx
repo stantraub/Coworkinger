@@ -1,5 +1,6 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import AmenitiesContainer from './amenities_modal_container'
 
@@ -24,10 +25,11 @@ function Modal({ modal, closeModal }) {
     );
 }
 
-const mapStateToProps = state => {
-    return {
+const mapStateToProps = (state, ownProps) => {
+    console.log(ownProps)
+    return ({
         modal: state.ui.modal
-    };
+    });
 };
 
 const mapDispatchToProps = dispatch => {
@@ -37,4 +39,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Modal));

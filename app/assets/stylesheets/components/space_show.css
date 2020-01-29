@@ -95,6 +95,7 @@
 
 .num-amenities-wrapper {
     padding-top: 20px;
+    cursor: pointer;
 }
 
 .num-amenities-wrapper:hover {
@@ -103,7 +104,7 @@
 
 .num-amenities-text {
     margin: 0;
-    color: #4abde9
+    color: #4abde9;
 }
 
 .space-summary {

@@ -4,9 +4,11 @@ import { fetchSpace } from '../../actions/space_actions';
 import { openModal } from '../../actions/modal_actions';
 import { withRouter } from 'react-router-dom';
 
-const msp = (state, ownProps) => ({
-    space: state.entities.spaces[ownProps.match.params.id]
-})
+const msp = (state, ownProps) => {
+    return({
+        space: state.entities.spaces[ownProps.match.params.id]
+    })
+}
 
 const mdp = dispatch => ({
     fetchSpace: (id) => dispatch(fetchSpace(id)),

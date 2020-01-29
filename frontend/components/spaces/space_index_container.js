@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Spaces from './space_index';
 import { fetchSpaces } from '../../actions/space_actions';
-
+import { withRouter } from 'react-router-dom';
 
 const msp = (state) => {
     return {
@@ -12,4 +12,4 @@ const mdp = dispatch => ({
     fetchSpaces: () => dispatch(fetchSpaces())
 })
 
-export default connect(msp, mdp)(Spaces);
+export default withRouter(connect(msp, mdp)(Spaces));

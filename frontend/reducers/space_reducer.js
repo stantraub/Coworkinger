@@ -7,7 +7,7 @@ import merge from "lodash/merge";
 
 const SpacesReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
-    let newState = merge({}, oldState);
+    let newState = {}
     switch(action.type) {
         case RECEIVE_SPACE:
             newState[action.space.id] = action.space
