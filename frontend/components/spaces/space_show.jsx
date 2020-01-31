@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SpaceShow extends React.Component {
     constructor(props) {
@@ -8,6 +9,7 @@ class SpaceShow extends React.Component {
     componentDidMount() {
         this.props.fetchSpace(this.props.match.params.id)
     }
+    
 
     includedAmenities(spaceAmenities) {
       if (spaceAmenities) {
@@ -78,14 +80,11 @@ class SpaceShow extends React.Component {
                       ></img>
                     </div>
                     <div className="space-show-pic-column">
-                      <img
-                        className="space-show-pic-image"
-                        src={space.space_pics[2]}
-                      ></img>
-                      <img
-                        className="space-show-pic-image"
-                        src={space.space_pics[3]}
-                      ></img>
+                      <img className="space-show-pic-image" src={space.space_pics[2]}></img>
+                      <img className="space-show-pic-image" src={space.space_pics[3]}></img>
+                      <Link to={{ pathname: `/spaces/${space.id}/pics`, query: {spacePics : space.space_pics}}}>
+                        <button className="photos-btn">View Photos</button>
+                      </Link>
                     </div>
                   </div>
                 </div>

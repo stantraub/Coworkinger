@@ -15,6 +15,39 @@
     position: relative;
 }
 
+@media only screen and (max-width: 1100px) {
+    .space-index-main {
+        padding: 30px;
+    }
+    .space-item-wrapper {
+        width: 100%;
+        height: auto;
+        margin: 0.5em;
+        flex-direction: column;
+    }
+
+    .space-item-cost {
+        position: relative;
+        left: 0;
+        padding-left: 15px;
+    }
+
+    .space-link {
+        width: 100%;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .main-pic {
+        width: auto;
+        padding-left: 15px;
+    }
+
+    .space-item-info {
+        padding-right: 15px;
+    }
+}
+
 .space-link {
     text-decoration: none;
     color: black;

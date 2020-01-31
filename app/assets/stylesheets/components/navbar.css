@@ -47,6 +47,16 @@
     cursor: pointer;
 }
 
+@media only screen and (max-width: 625px) {
+    .action-item {
+        display: none;
+    }
+
+    .main-logo {
+        margin: 10px;
+    }
+}
+
 .action-buttons-wrapper {
     padding: 12px;
     display: flex;
