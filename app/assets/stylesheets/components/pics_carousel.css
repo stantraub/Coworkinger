@@ -16,7 +16,6 @@
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 .carousel-main-pic-wrapper {
@@ -24,6 +23,8 @@
     flex-direction: row;
     padding: 40px;
     justify-content: center;
+    width: auto;
+    
 }
 
 .carousel-arrows {
@@ -39,7 +40,7 @@
     object-fit: cover;
     cursor: pointer;
     border-radius: 16px;
-    max-width: 100% !important;
+    width: 100% !important;
     margin: 0px auto;
     top: 50%;
     left: 0px;

@@ -1,10 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PicsCarousel from '../modals/pics_carousel';
 
 class SpaceShow extends React.Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+          picsCarousel: false
+        }
+
+        this.handleClick = this.handleClick.bind(this)
+        this.showPicsCarousel = null
     }
+
+
+    handleClick() {
+      this.setState({picsCarousel: !this.state.picsCarousel})
+  }
 
     componentDidMount() {
         this.props.fetchSpace(this.props.match.params.id)
@@ -60,8 +73,15 @@ class SpaceShow extends React.Component {
     render() {
         // if space is undefined, set space equal to an empty object
         const {space = {}} = this.props
-        if (space.space_pics) {
+        if (space.space_pics && this.state.picsCarousel) {
+          return (
+            <div className="carousel-background">
+              { this.state.picsCarousel ? <PicsCarousel spacePics={space.space_pics} handleClick={this.handleClick} /> : null }
+            </div>
+          )
+        } else if (space.space_pics) {
             return (
+              
               <div className="space-show-main-div">
                 <div className="space-pics">
                   <img
@@ -82,9 +102,9 @@ class SpaceShow extends React.Component {
                     <div className="space-show-pic-column">
                       <img className="space-show-pic-image" src={space.space_pics[2]}></img>
                       <img className="space-show-pic-image" src={space.space_pics[3]}></img>
-                      <Link to={{ pathname: `/spaces/${space.id}/pics`, query: {spacePics : space.space_pics}}}>
-                        <button className="photos-btn">View Photos</button>
-                      </Link>
+                      <button onClick={() => this.handleClick()} className="photos-btn">View Photos</button>
+
+                      
                     </div>
                   </div>
                 </div>
