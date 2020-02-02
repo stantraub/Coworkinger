@@ -9,17 +9,12 @@
 }
 
 .main-nav-mobile {
-    display: flex;
     font-size: 2em;
     font-weight: 500;
-    flex-direction: row;
-    justify-content: space-between;
     font-family: Avenir;
-    padding: 0 20px;
-    line-height: 64px;
-    height: 64px;
-    height: 100%;
-    border-bottom: 1px solid #e6e6e6;
+    padding: 0 30px;
+    height: 130px;
+    line-height: 130px;
 }
 
 .main-logo {
@@ -38,12 +33,11 @@
 .main-logo-mobile {
     /* padding-top: 10px; */
     /* padding: 12px; */
-    margin-left: 10px;
-    margin-top: 18px;
     font-size: 2em;
     font-weight: 400;
     text-decoration: none;
     color: #4abde9;
+    cursor: pointer;
 }
 
 .signup-button {
@@ -73,6 +67,9 @@
     cursor: pointer;
 }
 
+.action-item-mobile {
+}
+
 @media only screen and (max-width: 625px) {
     .action-item {
         display: none;
@@ -93,6 +90,5 @@
 .action-buttons-wrapper-mobile {
     display: flex;
     flex-direction: row;
-    padding: 12px;
-
+    justify-content: space-between;
 }

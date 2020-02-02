@@ -44,18 +44,16 @@ class Navbar extends React.Component {
         } else {
             return (
               <div className="main-nav-mobile">
+                <div className="action-buttons-wrapper-mobile">
                   <Link to="/" className="main-logo-mobile">
                     Coworking
                   </Link>
-                <div className="action-buttons-wrapper-mobile">
-                  <div className="action-item">
-                    <Link
+                  <Link className="action-item-mobile"
                       style={{ textDecoration: "none", color: "black" }}
                       to={"/spaces"}
-                    >
-                      <span>Find a workspace</span>
-                    </Link>
-                  </div>
+                  >
+                      Find a workspace
+                  </Link>
                 </div>
               </div>
             );
