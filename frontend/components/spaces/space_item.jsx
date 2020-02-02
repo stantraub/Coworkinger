@@ -78,7 +78,7 @@ class SpaceItem extends React.Component {
             <Link to={`/spaces/${this.props.spaceId}`} className="space-link">
               <div>
                 <div className="space-item-name-mobile">{this.props.name}</div>
-                <div className="space-item-amenities">
+                <div className="space-item-amenities-mobile">
                   <div>
                     {this.props.city}, {this.props.state}
                   </div>
