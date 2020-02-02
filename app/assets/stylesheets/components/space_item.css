@@ -60,18 +60,38 @@
     border-radius: 4px;
 }
 
+.main-pic-mobile {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+} 
+
 .space-item-info {
     padding-left: 15px;
 }
+
+
 
 .space-item-name {
     font-size: 18px;
     padding-bottom: 10px
 }
 
+.space-item-name-mobile {
+    font-size: 3em;
+    padding-bottom: 10px;
+    font-weight: 400;
+}
+
 .space-item-amenities {
     color: gray;
     font-size: 14px;
+}
+
+.space-item-amenities {
+    color: #484848;
+    font-size: 1.75em;
+
 }
 
 .space-amenity-wrapper {
@@ -89,4 +109,10 @@
     bottom: 0;
     right: 0;
     font-size: 18px;
+}
+
+.space-item-cost-mobile {
+    font-size: 2em;
+    font-weight: 200;
+     color: #484848
 }
