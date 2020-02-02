@@ -10,6 +10,10 @@
     margin-inline-end: 0px;
 }
 
+.space-index-header-mobile {
+    font-size: 3em;
+}
+
 .spaces-index-wrapper {
     display: flex;
     flex-direction: column;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PicsCarousel from '../modals/pics_carousel';
 
 class SpaceShow extends React.Component {
@@ -73,7 +72,7 @@ class SpaceShow extends React.Component {
     render() {
         // if space is undefined, set space equal to an empty object
         const {space = {}} = this.props
-        if (space.space_pics && this.state.picsCarousel) {
+        if (this.state.picsCarousel) {
           return (
             <div className="carousel-background">
               { this.state.picsCarousel ? <PicsCarousel spacePics={space.space_pics} handleClick={this.handleClick} /> : null }
@@ -103,8 +102,6 @@ class SpaceShow extends React.Component {
                       <img className="space-show-pic-image" src={space.space_pics[2]}></img>
                       <img className="space-show-pic-image" src={space.space_pics[3]}></img>
                       <button onClick={() => this.handleClick()} className="photos-btn">View Photos</button>
-
-                      
                     </div>
                   </div>
                 </div>

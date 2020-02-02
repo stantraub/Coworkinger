@@ -160,8 +160,22 @@
 }
 
 @media only screen and (max-width: 625px) {
-    .reserve-widget-wrapper {
-        display: none !important;
+    .reserve-widget {
+        position: fixed !important;
+        bottom: 0px !important;
+        left: 0px !important;
+        height: auto;
+        z-index: 2;
+        width: 100%;
+        background-color: white;
+        padding-top: 16px !important;
+        padding-bottom: 16px !important;
+        z-index: 4 !important;
+        border-top: 1px solid rgb(235, 235, 235) !important;
+    }
+
+    .contact-info-wrapper {
+        display: none;
     }
 
     .space-show-info {
