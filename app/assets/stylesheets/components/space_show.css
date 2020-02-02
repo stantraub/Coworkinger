@@ -16,6 +16,13 @@
     flex-direction: row;
 }
 
+.space-pics-mobile {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 10px;
+    height: 41em;
+}
+
 @media only screen and (max-width: 800px) {
   .space-show-pic-column:first-of-type {
     display: none;
@@ -43,6 +50,13 @@
     width: 50%;
     overflow: hidden;
     border: 1px solid rgb(147, 140, 140);
+}
+
+.space-show-main-pic-mobile {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid rgb(147, 140, 140);
+    height: 41em;
 }
 
 .space-show-space-pics {

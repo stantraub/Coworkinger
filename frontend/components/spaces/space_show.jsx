@@ -1,5 +1,11 @@
 import React from 'react';
 import PicsCarousel from '../modals/pics_carousel';
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile
+} from "react-device-detect";
 
 class SpaceShow extends React.Component {
     constructor(props) {
@@ -78,15 +84,13 @@ class SpaceShow extends React.Component {
               { this.state.picsCarousel ? <PicsCarousel spacePics={space.space_pics} handleClick={this.handleClick} /> : null }
             </div>
           )
-        } else if (space.space_pics) {
+        } 
+        if (space.space_pics) {
+          if (isBrowser) {
             return (
-              
               <div className="space-show-main-div">
                 <div className="space-pics">
-                  <img
-                    className="space-show-main-pic"
-                    src={space.main_pic}
-                  ></img>
+                  <img className="space-show-main-pic" src={space.main_pic}></img>
                   <div className="space-show-space-pics">
                     <div className="space-show-pic-column">
                       <img
@@ -99,9 +103,20 @@ class SpaceShow extends React.Component {
                       ></img>
                     </div>
                     <div className="space-show-pic-column">
-                      <img className="space-show-pic-image" src={space.space_pics[2]}></img>
-                      <img className="space-show-pic-image" src={space.space_pics[3]}></img>
-                      <button onClick={() => this.handleClick()} className="photos-btn">View Photos</button>
+                      <img
+                        className="space-show-pic-image"
+                        src={space.space_pics[2]}
+                      ></img>
+                      <img
+                        className="space-show-pic-image"
+                        src={space.space_pics[3]}
+                      ></img>
+                      <button
+                        onClick={() => this.handleClick()}
+                        className="photos-btn"
+                      >
+                        View Photos
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -120,7 +135,7 @@ class SpaceShow extends React.Component {
                       <h2>Amenities</h2>
                       <div className="amenities-div">
                         {this.includedAmenities(space.amenities)}
-                      </div>  
+                      </div>
                       {this.otherAmenities(space.amenities)}
                     </div>
                   </div>
@@ -130,7 +145,9 @@ class SpaceShow extends React.Component {
                       <span className="reserve-per-month">per desk / month</span>
                     </div>
                     <div className="contact-info-wrapper">
-                      <div className="contact-item-top"><a href={space.website}>{space.website}</a></div>
+                      <div className="contact-item-top">
+                        <a href={space.website}>{space.website}</a>
+                      </div>
                       <div className="contact-item">{space.email}</div>
                       <div className="contact-item">{space.phone}</div>
                     </div>
@@ -138,6 +155,54 @@ class SpaceShow extends React.Component {
                 </div>
               </div>
             );
+          } else {
+            return (
+              <div className="space-show-main-div">
+                <div className="space-pics-mobile">
+                  <img
+                    className="space-show-main-pic-mobile"
+                    src={space.main_pic}
+                  ></img>
+                </div>
+                <div className="space-info-wrapper">
+                  <div className="space-show-info">
+                    <div className="space-summary">
+                      <span className="space-show-name">{space.name}</span>
+                      <div className="space-show-city">{space.city}</div>
+                    </div>
+                    <div className="description-wrapper">
+                      <p className="space-show-description">
+                        {space.description}
+                      </p>
+                    </div>
+                    <div className="amenities-wrapper">
+                      <h2>Amenities</h2>
+                      <div className="amenities-div">
+                        {this.includedAmenities(space.amenities)}
+                      </div>
+                      {this.otherAmenities(space.amenities)}
+                    </div>
+                    <div className="reserve-widget-wrapper">
+                      <div className="reserve-widget">
+                        <span className="reserve-cost">${space.cost} </span>
+                        <span className="reserve-per-month">
+                          per desk / month
+                        </span>
+                      </div>
+                      <div className="contact-info-wrapper">
+                        <div className="contact-item-top">
+                          <a href={space.website}>{space.website}</a>
+                        </div>
+                        <div className="contact-item">{space.email}</div>
+                        <div className="contact-item">{space.phone}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
         } else {
             return (
                 <div>
