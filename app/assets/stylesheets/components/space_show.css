@@ -5,7 +5,10 @@
     width: 100%;
 }
 
-
+.space-show-main-div-mobile {
+    font-family: Avenir;
+    color: rgb(72, 72, 72);
+}
 
 .space-pics {
     overflow: hidden;
@@ -19,7 +22,6 @@
 .space-pics-mobile {
     overflow: hidden;
     width: 100%;
-    margin-top: 10px;
     height: 41em;
 }
 
@@ -101,6 +103,11 @@
     margin-right: auto;
 }
 
+.space-info-wrapper-mobile {
+    display: flex;
+    flex-direction: column;
+}
+
 .space-show-info {
     max-width: 35%;
     width: 50%;
@@ -110,9 +117,22 @@
     padding-left: 24px;
 }
 
-.space-show-name {
+.space-show-info-mobile {
+    width: auto !important;
+    padding-right: 65px !important;
+    padding-left: 65px !important;
+}
+
+
+.space-show-name {  
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 600;
+}
+
+.space-show-name-mobile {
+    padding-top: 50px;
+    font-weight: 600;
+    font-size: 4em;
 }
 
 .space-show-city {
@@ -120,12 +140,15 @@
     padding-bottom: 10px;
 }
 
+.space-show-city-mobile {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 2.75em;
+}
+
 .description-wrapper {
     border-top: 1px solid #e6e6e6;
     border-bottom: 1px solid #e6e6e6;
-
-
-
 }
 
 .space-show-description {
@@ -133,19 +156,49 @@
     padding-bottom: 16px;
 }
 
+.space-show-description-mobile {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 2.75em;
+}
+
 .amenities-wrapper {
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     border-bottom: 1px solid #e6e6e6;
     margin-bottom: 15px;
+}
+
+.amenities-wrapper-mobile {
+    border-bottom: 1px solid #e6e6e6;
+
+}
+
+
+
+.amenities-header-mobile {
+    font-size: 2.75em;
+    font-weight: 600;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
 }
 
 .amenities-div {
     columns: 2 auto;
 }
 
+.amenities-div-mobile {
+    columns: 2 auto;
+    font-size: 2.75em;
+}
+
 .amenities-item {
     padding-top: 20px;
+}
+
+.amenities-item-mobile {
+    margin-bottom: 50px;
 }
 
 .num-amenities-wrapper {
@@ -160,6 +213,13 @@
 .num-amenities-text {
     margin: 0;
     color: #4abde9;
+}
+
+.num-amenities-text-mobile {
+    font-size: 2.75em;
+    color: #4abde9;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .space-summary {
@@ -206,15 +266,35 @@
     border: 1px solid #e6e6e6
 }
 
+.reserve-widget-mobile {
+    bottom: 0px !important;
+    position: sticky;
+    height: 10vh;
+    line-height: 10vh;
+    left: 0px !important;
+    right: 0px !important;
+    background: white !important;
+    z-index: 2;
+    padding: 0 50px;
+    border-top: 2px solid rgb(235, 235, 235) !important;
+}
+
 .reserve-cost {
     font-size: 22px;
     font-weight: 700;
     max-width: 30%;
 }
 
-.reserve-per-month {
-    font-size: 12px;
-    font-weight: 600;
+.reserve-cost-mobile {
+    font-size: 3.5em;
+    font-weight: 700;
+
+}
+
+.reserve-per-month-mobile {
+    font-size: 2em;
+    font-weight: 525;
+    color: rgb(72, 72, 72) !important;
 }
 
 .reserve-tour-btn {
@@ -239,6 +319,14 @@
 
 }
 
+.contact-info-wrapper-mobile {
+    margin-top: 50px;
+    margin-bottom: 25%;
+    height: 10vh;
+    font-size: 2.75em;
+
+}
+
 .contact-item-top {
     padding-bottom: 12px;
 }
@@ -246,4 +334,13 @@
     border-top: 1px solid #e6e6e6;
     padding-top: 12px;
     padding-bottom: 12px;
+}
+
+.contact-header-mobile {
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.contact-item-mobile {
+    margin-bottom: 50px;
 }
