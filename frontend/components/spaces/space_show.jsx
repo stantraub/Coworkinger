@@ -1,5 +1,6 @@
 import React from 'react';
 import PicsCarousel from '../modals/pics_carousel';
+import AmenitiesModal from '../modals/amenities_modal';
 import {
   BrowserView,
   MobileView,
@@ -12,23 +13,61 @@ class SpaceShow extends React.Component {
         super(props)
 
         this.state = {
-          picsCarousel: false
+          picsCarousel: false,
+          amenitiesModal: false
         }
 
-        this.handleClick = this.handleClick.bind(this)
-        this.showPicsCarousel = null
+        this.togglePicsCarousel = this.togglePicsCarousel.bind(this)
+        this.toggleAmenitiesModal = this.toggleAmenitiesModal.bind(this)
     }
 
-
-    handleClick() {
+    togglePicsCarousel() {
       this.setState({picsCarousel: !this.state.picsCarousel})
-  }
+    }
+
+    toggleAmenitiesModal() {
+      this.setState({ amenitiesModal: !this.state.amenitiesModal})
+    }
+
+    showPicsCarousel(space) {
+      return (
+        this.state.picsCarousel ? 
+          <div className="carousel-background">
+            <PicsCarousel spacePics={space.space_pics} togglePicsCarousel={this.togglePicsCarousel} />
+          </div> 
+          : 
+          null
+      )
+    }
+
+    showAmenitiesModal(space) {
+      if (isMobile) {
+        return (
+          this.state.amenitiesModal ?
+          <div className="amenities-background">
+            <div className="amenities-modal-child">
+              <AmenitiesModal amenityCategories={space.amenityCategories} toggleAmenitiesModal={this.toggleAmenitiesModal} />
+            </div> 
+          </div>
+          : null
+        )
+      } else {
+        return (
+          this.state.amenitiesModal ?
+            <div className="amenities-background">
+              <div className="amenities-modal-child">
+                <AmenitiesModal amenityCategories={space.amenityCategories} toggleAmenitiesModal={this.toggleAmenitiesModal} />
+              </div>
+            </div> : null
+        )
+      }
+  
+    }
 
     componentDidMount() {
         this.props.fetchSpace(this.props.match.params.id)
     }
     
-
     includedAmenities(spaceAmenities) {
       if (isBrowser) {
         let amenities = Object.entries(spaceAmenities).slice(0, 6)
@@ -138,7 +177,7 @@ class SpaceShow extends React.Component {
             <div className="num-amenities-wrapper">
               <div
                 className="num-amenities-text"
-                onClick={() => this.props.openModal("amenities")}
+                onClick={() => this.toggleAmenitiesModal()}
               >
                 Show all {numAmenities} amenities
               </div>
@@ -149,7 +188,7 @@ class SpaceShow extends React.Component {
              <div className="num-amenities-wrapper-mobile">
                <div
                  className="num-amenities-text-mobile"
-                 onClick={() => this.props.openModal("amenities")}
+                  onClick={() => this.toggleAmenitiesModal()}
                >
                  Show all {numAmenities} amenities
                </div>
@@ -162,17 +201,13 @@ class SpaceShow extends React.Component {
     render() {
         // if space is undefined, set space equal to an empty object
         const {space = {}} = this.props
-        if (this.state.picsCarousel) {
-          return (
-            <div className="carousel-background">
-              { this.state.picsCarousel ? <PicsCarousel spacePics={space.space_pics} handleClick={this.handleClick} /> : null }
-            </div>
-          )
-        } 
+
         if (space.space_pics) {
           if (isBrowser) {
             return (
               <div className="space-show-main-div">
+                {this.showPicsCarousel(space)}
+                {this.showAmenitiesModal(space)}
                 <div className="space-pics">
                   <img className="space-show-main-pic" src={space.main_pic}></img>
                   <div className="space-show-space-pics">
@@ -196,7 +231,7 @@ class SpaceShow extends React.Component {
                         src={space.space_pics[3]}
                       ></img>
                       <button
-                        onClick={() => this.handleClick()}
+                        onClick={() => this.togglePicsCarousel()}
                         className="photos-btn"
                       >
                         View Photos
@@ -242,6 +277,8 @@ class SpaceShow extends React.Component {
           } else {
             return (
               <div className="space-show-main-div-mobile">
+                {this.showPicsCarousel(space)}
+                {this.showAmenitiesModal(space)}
                 <div className="space-pics-mobile">
                   <img
                     className="space-show-main-pic-mobile"

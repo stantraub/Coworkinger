@@ -28,7 +28,7 @@ export default class PicsCarousel extends Component {
                     <img onClick={() => this.changePic(spacePics.length, 1)} className="carousel-arrows" src="https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png"></img>
                 </div>
                 <div className="carousel-sidebar">
-                    <div onClick={() => this.props.handleClick()} className="carousel-x-button">
+                    <div onClick={() => this.props.togglePicsCarousel()} className="carousel-x-button">
                         <img className="carousel-x-img" src="http://cdn.onlinewebfonts.com/svg/img_170267.png"></img>
                     </div>
                     <div className="carousel-pic-count">

@@ -2,14 +2,12 @@ import React from "react";
 import { Switch, Route} from "react-router-dom";
 import NavBarContainer from "./nav/navbar_container";
 
-import Modal from "./modals/modals";
 import MainPage from "./main/main_page";
 import SpaceIndexContainer from "./spaces/space_index_container";
 import SpaceShowContainer from './spaces/space_show_container'
 
 const App = () => (
   <div>
-    <Modal />
     <NavBarContainer />
     <Switch>
       <Route exact path="/spaces/:id" component={SpaceShowContainer} /> 

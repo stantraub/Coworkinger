@@ -274,7 +274,6 @@
     left: 0px !important;
     right: 0px !important;
     background: white !important;
-    z-index: 2;
     padding: 0 50px;
     border-top: 2px solid rgb(235, 235, 235) !important;
 }
