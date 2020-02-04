@@ -44,8 +44,8 @@ class SpaceShow extends React.Component {
       if (isMobile) {
         return (
           this.state.amenitiesModal ?
-          <div className="amenities-background">
-            <div className="amenities-modal-child">
+          <div className="amenities-background-mobile">
+            <div className="amenities-modal-child-mobile">
               <AmenitiesModal amenityCategories={space.amenityCategories} toggleAmenitiesModal={this.toggleAmenitiesModal} />
             </div> 
           </div>

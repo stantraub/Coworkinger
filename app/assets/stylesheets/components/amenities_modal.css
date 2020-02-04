@@ -8,11 +8,22 @@
   z-index: 10;
 }
 
+.amenities-background-mobile {
+  position: fixed;
+  top: 0;
+  background: rgba(255, 255, 255, 0.8) !important;
+  z-index: 10;
+}
+
 .amenities-modal-child {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.amenities-modal-child-mobile {
+  position: absolute;
 }
 
 .amenities-modal-wrapper {
@@ -33,8 +44,8 @@
 
 .amenities-modal-wrapper-mobile {
   padding: 80px;
-  height: 100vh;  
-    width: 100vw;
+  height: 133em;  
+  width: 62em;
   background-color: white;  
   box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 10px 0px !important;
   z-index: 3;
