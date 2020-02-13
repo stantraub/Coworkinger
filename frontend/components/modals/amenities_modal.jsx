@@ -123,10 +123,7 @@ class Amenities extends React.Component {
                                 </div>
                             )
                         })}
-
-
                     </div>
-
                 </div>
             )
         }

@@ -35,12 +35,12 @@
 }
 
 .carousel-main-pic {
-    height: auto !important;
+    height: 40em;
     max-height: 75vh;
     object-fit: cover;
     cursor: pointer;
     border-radius: 16px;
-    width: 100% !important;
+    width: 56em;
     margin: 0px auto;
     top: 50%;
     left: 0px;

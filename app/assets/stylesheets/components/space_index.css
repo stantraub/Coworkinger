@@ -1,5 +1,21 @@
 .space-index-main {
     font-family: Avenir;
+    display: flex;
+    flex-direction: row;
+}
+
+.spaces-index-spaces-wrapper {
+    width: 50%;
+    padding-left: 24px;
+    padding-right: 24px;
+}   
+
+.space-index-map {
+    width: 50%;
+    height: 90vh;
+    top: 10vh;
+    position: sticky;
+
 }
 
 .space-index-main-mobile {
@@ -10,7 +26,8 @@
 }
 
 .space-index-header {
-    font-size: 32px;
+    font-size: 22px;
+    font-weight: 500;
     margin-block-start: 0.67em;
     margin-block-end: 0.67em;
     margin-inline-start: 0px;
@@ -22,7 +39,3 @@
     padding-bottom: 15px;
 }
 
-.spaces-index-wrapper {
-    display: flex;
-    flex-direction: column;
-}   

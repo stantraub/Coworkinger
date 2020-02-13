@@ -13,7 +13,6 @@
 .space-pics {
     overflow: hidden;
     width: 100%;
-    margin-top: 10px;
     height: 475px;
     display: flex;
     flex-direction: row;

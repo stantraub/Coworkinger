@@ -1,12 +1,11 @@
 .space-index-main {
-    padding: 60px;
+    
 }
 
 .space-item-wrapper {
     display: flex;
     flex-direction: row;
     border-top: 1px solid #e6e6e6;
-    width: 50%;
     height: 180px;
     padding-top: 20px;
     padding-bottom: 20px;
