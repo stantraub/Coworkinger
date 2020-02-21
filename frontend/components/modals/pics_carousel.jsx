@@ -23,9 +23,15 @@ export default class PicsCarousel extends Component {
         return (
             <div className="carousel-child">
                 <div className="carousel-main-pic-wrapper">
-                    <img onClick={() => this.changePic(spacePics.length, -1)} className="carousel-arrows" src="https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronLeft-512.png"></img>
-                    <img className="carousel-main-pic" src={spacePics[currentIdx]}></img>
-                    <img onClick={() => this.changePic(spacePics.length, 1)} className="carousel-arrows" src="https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png"></img>
+                    <div className="arrow-column-left">
+                        <img onClick={() => this.changePic(spacePics.length, -1)} className="carousel-arrows" src="https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronLeft-512.png"></img>
+                    </div>
+                    <div className="carousel-pic-div">
+                        <img className="carousel-main-pic" src={spacePics[currentIdx]}></img>
+                    </div>
+                    <div className="arrow-column-right">
+                        <img onClick={() => this.changePic(spacePics.length, 1)} className="carousel-arrows" src="https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png"></img>
+                    </div>
                 </div>
                 <div className="carousel-sidebar">
                     <div onClick={() => this.props.togglePicsCarousel()} className="carousel-x-button">

@@ -9,7 +9,7 @@
 }
 
 .carousel-child {
-  position: absolute;
+  position: absolute; 
   top: 50%;
   left: 50%;
   width: 100%;
@@ -19,19 +19,37 @@
 }
 
 .carousel-main-pic-wrapper {
-    display: flex;
-    flex-direction: row;
     padding: 40px;
     justify-content: center;
-    width: auto;
+    width: 75%;
+    display: flex;
+    flex-direction: row;
     
 }
+.arrow-column-left {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.arrow-column-right {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
 
 .carousel-arrows {
     width: 40px;
     height: 40px;
-    margin-top: 25%;
     cursor: pointer;
+}
+
+.carousel-pic-div {
+    width: 80%;
 }
 
 .carousel-main-pic {
@@ -40,20 +58,16 @@
     object-fit: cover;
     cursor: pointer;
     border-radius: 16px;
-    width: 56em;
-    margin: 0px auto;
-    top: 50%;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
+    width: 100%;
     /* transform: translateY(-50%) */
     
 }
 
 .carousel-sidebar {
     vertical-align: top !important;
-    width: 264px !important;
-    min-width: 264px !important;
+    /* width: 264px !important;
+    min-width: 264px !important; */
+    width: 25%;
     position: relative;
     display: flex;
     flex-direction: column;

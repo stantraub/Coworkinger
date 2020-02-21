@@ -65,7 +65,7 @@ class SpaceShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchSpace(this.props.match.params.id)
+      this.props.fetchSpace(this.props.match.params.id)
     }
     
     includedAmenities(spaceAmenities) {
