@@ -53,24 +53,22 @@ export default class PicsCarousel extends Component {
         } else {
             return (
                 <div className="carousel-child-mobile">
-                    <div className="carousel-main-pic-wrapper-mobile">
-                        <div className="arrow-column-left-mobile">
-                            <img onClick={() => this.changePic(spacePics.length, -1)} className="carousel-arrows" src="https://coworking-dev.s3-us-west-1.amazonaws.com/24095038_white-arrow-transparent-png-1.png"></img>
-                        </div>
-                        <div className="carousel-pic-div-mobile">
-                            <img className="carousel-main-pic-mobile" src={spacePics[currentIdx]}></img>
-                        </div>
-                        <div className="arrow-column-right-mobile">
-                            <img onClick={() => this.changePic(spacePics.length, 1)} className="carousel-arrows" src="https://i.ya-webdesign.com/images/white-arrow-transparent-png-1.png"></img>
+                    <div className="carousel-x-mobile">
+                        <div onClick={() => this.props.togglePicsCarousel()} className="carousel-x-button-mobile">
+                            <img className="carousel-x-img-mobile" src="https://narrative.so/static/close-icon-white-4db08d3b63ac402ff1818b58026fd284.png"></img>
                         </div>
                     </div>
-                    <div className="carousel-sidebar">
-                        <div onClick={() => this.props.togglePicsCarousel()} className="carousel-x-button">
-                            <img className="carousel-x-img" src="https://narrative.so/static/close-icon-white-4db08d3b63ac402ff1818b58026fd284.png"></img>
+                    <div className="carousel-main-pic-wrapper-mobile">
+                        <div className="arrow-column-left-mobile">
+                            <img onClick={() => this.changePic(spacePics.length, -1)} className="carousel-arrows-mobile" src="https://coworking-dev.s3-us-west-1.amazonaws.com/24095038_white-arrow-transparent-png-1.png"></img>
                         </div>
-                        <div className="carousel-pic-count">
-                            {currentIdx + 1} / {spacePics.length}
+                        <img className="carousel-main-pic-mobile" src={spacePics[currentIdx]}></img>
+                        <div className="arrow-column-right-mobile">
+                            <img onClick={() => this.changePic(spacePics.length, 1)} className="carousel-arrows-mobile" src="https://i.ya-webdesign.com/images/white-arrow-transparent-png-1.png"></img>
                         </div>
+                    </div>
+                    <div className="carousel-pic-count-mobile">
+                        {currentIdx + 1} / {spacePics.length}
                     </div>
                 </div>
             )
