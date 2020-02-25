@@ -22,6 +22,7 @@
     overflow: hidden;
     width: 100%;
     height: 41em;
+    position: relative;
 }
 
 @media only screen and (max-width: 800px) {
@@ -93,6 +94,23 @@
     transform: translateY(0px) !important;
     right: 24px !important;
     bottom: 24px !important;
+    z-index: 1 !important;
+}
+
+.photos-btn-mobile {
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 1px 1px 1px !important;
+    background-color: #FFFFFF;
+    padding: 15px 24px; 
+    font-family: Avenir;
+    font-size: 3em;
+    font-weight: 500;
+    color: rgb(72, 72, 72);
+    border-radius: 4px;
+    position: absolute !important;
+    left: auto !important;
+    transform: translateY(0px) !important;
+    bottom: 30px;
+    right: 30px;
     z-index: 1 !important;
 }
 

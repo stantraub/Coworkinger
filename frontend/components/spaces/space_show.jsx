@@ -284,6 +284,12 @@ class SpaceShow extends React.Component {
                     className="space-show-main-pic-mobile"
                     src={space.main_pic}
                   ></img>
+                  <button
+                    onClick={() => this.togglePicsCarousel()}
+                    className="photos-btn-mobile"
+                  >
+                    View Photos
+                      </button>
                 </div>
                 <div className="space-info-wrapper-mobile">
                   <div className="space-show-info-mobile">
