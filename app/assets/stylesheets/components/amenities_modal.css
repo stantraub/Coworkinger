@@ -32,7 +32,6 @@
   background-color: white;  
   box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 10px 0px !important;
   z-index: 3;
-  font-family: Avenir;
   max-width: 568px;
   box-sizing: border-box;
   overflow-y: auto;
@@ -49,7 +48,6 @@
   background-color: white;  
   box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 10px 0px !important;
   z-index: 3;
-  font-family: Avenir;
   box-sizing: border-box;
   overflow-y: auto;
   position: relative !important;

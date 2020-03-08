@@ -149,7 +149,6 @@
 
 }
 .carousel-pic-count {
-    font-family: Avenir;
     font-weight: 500;
     padding-top: 104px !important;
     display: table-cell !important;
@@ -159,7 +158,6 @@
 }
 
 .carousel-pic-count-mobile {
-    font-family: Avenir;
     font-weight: 500;
     font-size: 2.5em;
     padding-top: 20px;

@@ -6,7 +6,6 @@
     background-color: white;
     z-index: 2;
     justify-content: space-between;
-    font-family: Avenir;
     padding: 0 20px;
     height: 10vh;
     line-height: 10vh;
@@ -16,7 +15,6 @@
 .main-nav-mobile {
     font-size: 2em;
     font-weight: 500;
-    font-family: Avenir;
     padding: 0 50px;
     height: 150px;
     line-height: 150px;
@@ -43,7 +41,6 @@
     border-color: #4abde9;
     color: #4abde9;
     font-size: 16px;
-    font-family: "Avenir";
     border-radius: 4px;
     outline: none;
     cursor: pointer;
@@ -57,7 +54,6 @@
 .signup-link {
     text-decoration: none;
     color: #4abde9;
-    font-family: Avenir;
 }
 
 .action-item {

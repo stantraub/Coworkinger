@@ -1,12 +1,10 @@
 .space-show-main-div {
-    font-family: Avenir;
     color: rgb(72, 72, 72);
     font-size: 16px;
     width: 100%;
 }
 
 .space-show-main-div-mobile {
-    font-family: Avenir;
     color: rgb(72, 72, 72);
 }
 
@@ -85,7 +83,6 @@
     box-shadow: rgba(0, 0, 0, 0.14) 0px 1px 1px 1px !important;
     background-color: #FFFFFF;
     padding: 6px 15px;
-    font-family: Avenir;
     font-weight: 500;
     color: rgb(72, 72, 72);
     border-radius: 4px;
@@ -101,7 +98,6 @@
     box-shadow: rgba(0, 0, 0, 0.14) 0px 1px 1px 1px !important;
     background-color: #FFFFFF;
     padding: 15px 24px; 
-    font-family: Avenir;
     font-size: 3em;
     font-weight: 500;
     color: rgb(72, 72, 72);

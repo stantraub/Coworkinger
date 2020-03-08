@@ -1,5 +1,4 @@
 .space-index-main {
-    font-family: Avenir;
     display: flex;
     flex-direction: row;
 }
@@ -19,7 +18,6 @@
 }
 
 .space-index-main-mobile {
-    font-family: Avenir;
     padding-left: 75px;
     padding-right: 75px;
     margin-top: 50px;
