@@ -6,12 +6,9 @@ import {
     isMobile
 } from "react-device-detect";
 
-class Amenities extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+const Amenities = props => {
 
-    amenitiesList(categoryAmenities) {
+    function amenitiesList(categoryAmenities) {
         if (categoryAmenities) {
             let amenities = Object.entries(categoryAmenities)
             if (isMobile) {
@@ -86,49 +83,48 @@ class Amenities extends React.Component {
     }
    
 
-    render() {
-        const { amenityCategories = {} } = this.props
-        if (isBrowser) {
-            return (
-                <div className="amenities-modal-wrapper">
-                    <div className="x-button" onClick={() => this.props.toggleAmenitiesModal()}>
-                        <img className="x-img" src="http://cdn.onlinewebfonts.com/svg/img_170267.png"></img>
-                    </div>
-                    <h1 className="amenities-modal-header">Amenities</h1>
-                    <div className="amenities-content">
-                        {Object.keys(amenityCategories).map((category, i) => {
-                            return (
-                                <div className="amenity-category-wrapper" key={i}>
-                                    <h2 className="amenity-category-item">{category[0].toUpperCase() + category.slice(1).split("_").join(" ")}</h2>
-                                    <div>{this.amenitiesList(amenityCategories[category])}</div>
-                                </div>
-                            )
-                        })}
-                    </div>
+    const { amenityCategories = {} } = props
+    if (isBrowser) {
+        return (
+            <div className="amenities-modal-wrapper">
+                <div className="x-button" onClick={() => props.toggleAmenitiesModal()}>
+                    <img className="x-img" src="http://cdn.onlinewebfonts.com/svg/img_170267.png"></img>
                 </div>
-            )
-        } else {
-            return (
-                <div className="amenities-modal-wrapper-mobile">
-                    <div className="x-button-mobile" onClick={() => this.props.toggleAmenitiesModal()}>
-                        <img className="x-img-mobile" src="http://cdn.onlinewebfonts.com/svg/img_170267.png"></img>
-                    </div>
-                    <h1 className="amenities-modal-header-mobile">Amenities</h1>
-                    <div className="amenities-content-mobile">
-                        {Object.keys(amenityCategories).map((category, i) => {
-                            return (
-                                <div className="amenity-category-wrapper-mobile" key={i}>
-                                    <h2 className="amenity-category-item-mobile">{category[0].toUpperCase() + category.slice(1).split("_").join(" ")}</h2>
-                                    <div>{this.amenitiesList(amenityCategories[category])}</div>
-                                </div>
-                            )
-                        })}
-                    </div>
+                <h1 className="amenities-modal-header">Amenities</h1>
+                <div className="amenities-content">
+                    {Object.keys(amenityCategories).map((category, i) => {
+                        return (
+                            <div className="amenity-category-wrapper" key={i}>
+                                <h2 className="amenity-category-item">{category[0].toUpperCase() + category.slice(1).split("_").join(" ")}</h2>
+                                <div>{amenitiesList(amenityCategories[category])}</div>
+                            </div>
+                        )
+                    })}
                 </div>
-            )
-        }
-
+            </div>
+        )
+    } else {
+        return (
+            <div className="amenities-modal-wrapper-mobile">
+                <div className="x-button-mobile" onClick={() => props.toggleAmenitiesModal()}>
+                    <img className="x-img-mobile" src="http://cdn.onlinewebfonts.com/svg/img_170267.png"></img>
+                </div>
+                <h1 className="amenities-modal-header-mobile">Amenities</h1>
+                <div className="amenities-content-mobile">
+                    {Object.keys(amenityCategories).map((category, i) => {
+                        return (
+                            <div className="amenity-category-wrapper-mobile" key={i}>
+                                <h2 className="amenity-category-item-mobile">{category[0].toUpperCase() + category.slice(1).split("_").join(" ")}</h2>
+                                <div>{amenitiesList(amenityCategories[category])}</div>
+                            </div>
+                        )
+                    })}
+                </div>
+            </div>
+        )
     }
+
 }
+
 
 export default Amenities

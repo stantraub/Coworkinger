@@ -83,6 +83,7 @@
     box-shadow: rgba(0, 0, 0, 0.14) 0px 1px 1px 1px !important;
     background-color: #FFFFFF;
     padding: 6px 15px;
+    font-family: inherit;
     font-weight: 500;
     color: rgb(72, 72, 72);
     border-radius: 4px;
@@ -99,6 +100,7 @@
     background-color: #FFFFFF;
     padding: 15px 24px; 
     font-size: 3em;
+    font-family: inherit;
     font-weight: 500;
     color: rgb(72, 72, 72);
     border-radius: 4px;
