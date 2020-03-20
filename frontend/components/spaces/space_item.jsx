@@ -7,96 +7,91 @@ import {
   isMobile
 } from "react-device-detect";
 
-class SpaceItem extends React.Component {
-    constructor(props) {
-      super(props)
+const SpaceItem = props => {
+
+  function includedAmenities() {
+    let included = ""
+
+    if (props.availability) {
+      included += "Space available · "
     }
 
-    includedAmenities() {
-      let included = ""
-
-      if (this.props.availability) {
-        included += "Space available · "
-      }
-
-      if (this.props.deskDay) {
-        included += 'Day Passes Available · '
-      }
-
-      included += `${this.props.peopleCapacity} total capacity`
-
-      if (this.props.officeCapacity > 0) {
-        included += ` · ${this.props.officeCapacity} offices`
-      }
-      return included;
+    if (props.desk_day) {
+      included += 'Day Passes Available · '
     }
 
-    phone() {
-      if (this.props.phone !== 'N/A') return this.props.phone
-    }
+    included += `${props.people_capacity} total capacity`
 
-    email() {
-      if (this.props.email !== 'N/A') return this.props.email
-
+    if (props.officeCapacity > 0) {
+      included += ` · ${props.office_capacity} offices`
     }
-    render() {
-      if (isBrowser) {
-        return (
-          <div className="space-item-wrapper">
-            <Link to={`/spaces/${this.props.spaceId}`} className="space-link">
-              <img className="main-pic" src={this.props.mainPic} />
-            </Link>
-            <Link to={`/spaces/${this.props.spaceId}`} className="space-link">
-              <div className="space-item-info">
-                <div className="space-item-name">{this.props.name}</div>
-                <div className="space-item-amenities">
-                  <div>
-                    {this.props.city}, {this.props.state}
-                  </div>
-                  <span>{this.props.neighborhood}</span>
-                  <div className="space-amenity-wrapper">
-                    {this.includedAmenities()}
-                  </div>
-                  <div className="space-item-contact">
-                    <div>{this.phone()}</div>
-                    <div>{this.email()}</div>
-                  </div>
-                </div>
-                <div className="space-item-cost">
-                  <strong>${this.props.cost}</strong> per desk / month
-                </div>
-              </div>
-            </Link>
-          </div>
-        );
-      } else {
-        return (
-          <div className="space-item-wrapper">
-            <Link to={`/spaces/${this.props.spaceId}`} className="space-link">
-              <img className="main-pic-mobile" src={this.props.mainPic} />
-            </Link>
-            <Link to={`/spaces/${this.props.spaceId}`} className="space-link">
+    return included;
+  }
+
+  function phone() {
+    if (props.phone !== 'N/A') return props.phone
+  }
+
+  function email() {
+    if (props.email !== 'N/A') return props.email
+
+  }
+  if (isBrowser) {
+    return (
+      <div className="space-item-wrapper">
+        <Link to={`/spaces/${props.spaceId}`} className="space-link">
+          <img className="main-pic" src={props.main_pic} />
+        </Link>
+        <Link to={`/spaces/${props.spaceId}`} className="space-link">
+          <div className="space-item-info">
+            <div className="space-item-name">{props.name}</div>
+            <div className="space-item-amenities">
               <div>
-                <div className="space-item-name-mobile">{this.props.name}</div>
-                <div className="space-item-amenities-mobile">
-                  <div>
-                    {this.props.city}, {this.props.state}
-                  </div>
-                  <span>{this.props.neighborhood}</span>
-                  <div className="space-amenity-wrapper">
-                    {this.includedAmenities()}
-                  </div>
-                </div>
-                <div className="space-item-cost-mobile">
-                  <span>${this.props.cost} per desk / month</span>
-                </div>
+                {props.city}, {props.state}
               </div>
-            </Link>
+              <span>{props.neighborhood}</span>
+              <div className="space-amenity-wrapper">
+                {includedAmenities()}
+              </div>
+              <div className="space-item-contact">
+                <div>{phone()}</div>
+                <div>{email()}</div>
+              </div>
+            </div>
+            <div className="space-item-cost">
+              <strong>${props.cost}</strong> per desk / month
+            </div>
           </div>
-        );
-      }
-
-    }
+        </Link>
+      </div>
+    );
+  } else {
+    return (
+      <div className="space-item-wrapper">
+        <Link to={`/spaces/${props.spaceId}`} className="space-link">
+          <img className="main-pic-mobile" src={props.main_pic} />
+        </Link>
+        <Link to={`/spaces/${props.spaceId}`} className="space-link">
+          <div>
+            <div className="space-item-name-mobile">{props.name}</div>
+            <div className="space-item-amenities-mobile">
+              <div>
+                {props.city}, {props.state}
+              </div>
+              <span>{props.neighborhood}</span>
+              <div className="space-amenity-wrapper">
+                {includedAmenities()}
+              </div>
+            </div>
+            <div className="space-item-cost-mobile">
+              <span>${props.cost} per desk / month</span>
+            </div>
+          </div>
+        </Link>
+      </div>
+    );
+  }
 }
+
 
 export default SpaceItem
