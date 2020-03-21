@@ -178,8 +178,8 @@
 }
 
 .amenities-wrapper {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     border-bottom: 1px solid #e6e6e6;
     margin-bottom: 15px;
 }
@@ -187,6 +187,10 @@
 .amenities-wrapper-mobile {
     border-bottom: 1px solid #e6e6e6;
 
+}
+
+.amenities-header {
+    font-weight: 1000
 }
 
 

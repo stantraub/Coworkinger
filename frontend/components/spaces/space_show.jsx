@@ -240,7 +240,7 @@ const SpaceShow = props =>  {
                     </p>
                   </div>
                   <div className="amenities-wrapper">
-                    <h2>Amenities</h2>
+                    <div className="amenities-header">Amenities</div>
                     <div className="amenities-div">
                       {includedAmenities(space.amenities)}
                     </div>
