@@ -62,8 +62,6 @@
     cursor: pointer;
 }
 
-.action-item-mobile {
-}
 
 @media only screen and (max-width: 625px) {
     .action-item {
